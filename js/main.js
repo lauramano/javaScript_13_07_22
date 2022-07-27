@@ -13,15 +13,34 @@ function displayAsParagraf(value){
 
 displayH2('Labas pasauli');
 
-function myPower(num){    
-const rezult = num ** 3;
-return rezult;
-}
-const rezult = myPower(3);   // nuoseklesnis budas
+//Pradines funkcijos be colbaco ir veikia
 
-displayH2(rezult);
-displayAsParagraf(rezult);
+// function myPower(num){    
+// const rezult = num ** 3;
+// return rezult;
+// }
+// const rezult = myPower(3);   // nuoseklesnis budas
+
+// displayH2(rezult);
+// displayAsParagraf(rezult);
 
 // displayH2(myPower(3));    // matrioska
 console.log('funkcija my power', displayH2);
 // kai iskvieciam funkcija ir nepaduodam argumento, gauname funkcijos aprasyma 'displayH2(myPower);'
+
+function myPower(num, callbacfn){    
+    const rezult = num ** 3;
+    callbacfn(rezult)
+    // return rezult;
+    }
+     myPower(3, displayAsParagraf);   
+     myPower(11, displayH2);
+
+     myPower(5, (sk) => {
+        console.log('labas tai su arrou funkcija "=>{}"',sk)
+     });
+     myPower(4, console.log);
+
+    
+    // displayH2(rezult);
+    // displayAsParagraf(rezult);
